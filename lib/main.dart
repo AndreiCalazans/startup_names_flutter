@@ -8,6 +8,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Startup Name Generator',
+      theme: new ThemeData(
+        primaryColor: Colors.white,
+        ),
       home: RandomWords(),
     );
   }
@@ -88,7 +91,7 @@ class RandomWordsState extends State<RandomWords> {
             appBar: new AppBar(
               title: const Text('Saved Suggestions'),
             ),
-            body: _saved.isEmpty ? Text('You have an empty favorite list') : new ListView(children: divided),
+            body: _saved.isEmpty ? new Text('You have an empty favorite list', style: _biggerFont) : new ListView(children: divided),
           );
         }
       )
